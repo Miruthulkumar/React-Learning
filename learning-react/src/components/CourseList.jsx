@@ -6,10 +6,7 @@ const CourseList = () => {
   //dummy data
   const listOfCourses = [
     {
-      name: "HTML BEGINNER",
-      price: "$10",
-      rating: "⭐️⭐️⭐️⭐️⭐️",
-      duration: "10 Hours",
+      
     },
     {
       name: "CSS MASTERCLASS",

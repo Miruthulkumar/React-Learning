@@ -3,7 +3,7 @@ import "../App.css";
 
 const Courses = (props) => {
   return (
-    <div className="flex bg-gray-100 shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform">
+    props.name && <div className="flex bg-gray-100 shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform">
       <div className="w-1/3 bg-orange-100 flex items-center justify-center">
         <span className="text-gray-600">Image</span>
       </div>
