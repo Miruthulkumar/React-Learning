@@ -6,7 +6,7 @@ const CourseList = () => {
   //dummy data
   const listOfCourses = [
     {
-      
+
     },
     {
       name: "CSS MASTERCLASS",
@@ -76,8 +76,24 @@ const CourseList = () => {
     },
   ];
 
+  const ascendingOrder = [...listOfCourses]
+    .filter((course) => course.price) // ignore empty objects
+    .sort((a, b) => {
+      const priceA = parseFloat(a.price.slice(1));
+      const priceB = parseFloat(b.price.slice(1));
+      return priceA - priceB;
+    });
+
+  // const descendingOrder = [...listOfCourses]
+  //   .filter((course) => course.price) // ignore empty objects
+  //   .sort((a, b) => {
+  //     const priceA = parseFloat(a.price.slice(1));
+  //     const priceB = parseFloat(b.price.slice(1));
+  //     return priceB - priceA;
+  //   });
+
   //dummy data is converted into props for courses components (using map)
-  const mappedCourses = listOfCourses.map((course) => {
+  const mappedCourses = ascendingOrder.map((course) => {
     return (
       <Courses
         key={course.name}
