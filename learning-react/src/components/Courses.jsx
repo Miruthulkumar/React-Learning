@@ -2,6 +2,10 @@ import React from "react";
 import "../App.css";
 
 const Courses = (props) => {
+  function buyNow() {
+    console.log(props.name + " Course Bought!");
+  }
+
   return (
     props.name && (
       <div className="flex bg-gray-100 shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform">
@@ -13,6 +17,9 @@ const Courses = (props) => {
           <p className="text-gray-600 mb-2">Duration: {props.duration}</p>
           <p className="mb-2">{props.rating}</p>
           <p className="text-green-600 font-bold">{props.price}</p>
+          <button onClick={buyNow} className="bg-gray-500 rounded-2xl hover:bg-gray-600 transition-colors duration-100 mt-2.5 mr-40">
+            Buy Now
+          </button>
         </div>
       </div>
     )
