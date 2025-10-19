@@ -5,9 +5,7 @@ import Courses from "./Courses";
 const CourseList = () => {
   //dummy data
   const listOfCourses = [
-    {
-
-    },
+    {},
     {
       name: "CSS MASTERCLASS",
       price: "$15",
