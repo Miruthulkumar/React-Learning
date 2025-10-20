@@ -31,6 +31,7 @@ const Courses = (props) => {
           <p className="text-gray-400 ml-2 p-1.5">
             {purchased ? "Thanks For Buying!" : "Few Seats left!!!"}
           </p>
+          <button onClick={()=>props.delete(props.id)} className="bg-gray-500 rounded-xl hover:bg-gray-600 transition-colors duration-100 mt-2.5 mr-35">Delete Course</button>
         </div>
       </div>
     )
