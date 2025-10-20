@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import Courses from "./Courses";
 
@@ -83,6 +83,10 @@ const CourseList = () => {
       duration: "10 Hours",
     },
   ]);
+
+  useEffect(()=>{
+    console.log("Use Effect Triggered!")
+  })
 
   function handleDetele(id) {
     const newCourses = listOfCourses.filter((c) => c.id != id);
