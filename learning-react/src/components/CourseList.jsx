@@ -85,9 +85,14 @@ const CourseList = () => {
   ]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/").then((Response) => {
-      console.log(Response);
-    });
+    fetch("https://jsonplaceholder.typicode.com/posts/")
+      .then((Response) => {
+        // console.log(Response);
+        return Response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
   }, []);
 
   function handleDetele(id) {
