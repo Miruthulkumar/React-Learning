@@ -84,9 +84,11 @@ const CourseList = () => {
     },
   ]);
 
-  useEffect(()=>{
-    console.log("Use Effect Triggered!")
-  })
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts/").then((Response) => {
+      console.log(Response);
+    });
+  }, []);
 
   function handleDetele(id) {
     const newCourses = listOfCourses.filter((c) => c.id != id);
