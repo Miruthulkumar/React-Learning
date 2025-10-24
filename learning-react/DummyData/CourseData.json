@@ -146,6 +146,69 @@
       "price": "$27",
       "rating": "⭐️⭐️⭐️⭐️",
       "duration": "20 Hours"
+    },
+    {
+      "id": 22,
+      "name": "DEVOPS FUNDAMENTALS",
+      "price": "$29",
+      "rating": "⭐️⭐️⭐️⭐️⭐️",
+      "duration": "23 Hours"
+    },
+    {
+      "id": 23,
+      "name": "AI WITH PYTHON",
+      "price": "$32",
+      "rating": "⭐️⭐️⭐️⭐️⭐️",
+      "duration": "26 Hours"
+    },
+    {
+      "id": 24,
+      "name": "ETHICAL HACKING BEGINNER COURSE",
+      "price": "$21",
+      "rating": "⭐️⭐️⭐️⭐️",
+      "duration": "18 Hours"
+    },
+    {
+      "id": 25,
+      "name": "NEXT.JS ADVANCED WEB APPS",
+      "price": "$30",
+      "rating": "⭐️⭐️⭐️⭐️⭐️",
+      "duration": "24 Hours"
+    },
+    {
+      "id": 26,
+      "name": "FLUTTER MOBILE DEVELOPMENT",
+      "price": "$28",
+      "rating": "⭐️⭐️⭐️⭐️⭐️",
+      "duration": "27 Hours"
+    },
+    {
+      "id": 27,
+      "name": "CLOUD COMPUTING WITH AZURE",
+      "price": "$25",
+      "rating": "⭐️⭐️⭐️⭐️",
+      "duration": "20 Hours"
+    },
+    {
+      "id": 28,
+      "name": "R PROGRAMMING FOR DATA SCIENCE",
+      "price": "$19",
+      "rating": "⭐️⭐️⭐️⭐️",
+      "duration": "16 Hours"
+    },
+    {
+      "id": 29,
+      "name": "DATA VISUALIZATION WITH TABLEAU",
+      "price": "$22",
+      "rating": "⭐️⭐️⭐️⭐️⭐️",
+      "duration": "19 Hours"
+    },
+    {
+      "id": 30,
+      "name": "AUTOMATION TESTING WITH SELENIUM",
+      "price": "$17",
+      "rating": "⭐️⭐️⭐️⭐️",
+      "duration": "14 Hours"
     }
   ]
 }
