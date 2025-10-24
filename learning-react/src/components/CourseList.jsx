@@ -7,9 +7,9 @@ const CourseList = () => {
   const [listOfCourses, setListOfCourses] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5174/courses")
+    fetch("http://localhost:5175/courses")
       .then((Response) => {
-        // console.log(Response);
+        console.log(Response);
         return Response.json();
       })
       .then((data) => {
