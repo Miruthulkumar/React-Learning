@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect useState } from "react";
 // import axios from "axios";
 import "../App.css";
 import Courses from "./Courses";
 import useFetch from "../hooks/useFetch";
 
 const CourseList = () => {
-  const [listOfCourses,setListOfCourses, error] = useFetch();
+
+  //custom hook
+  const [data, setData, error] = useFetch(
+    "http://localhost:5175/courses"
+  );
 
   function handleDelete(id) {
-    const newCourses = listOfCourses.filter((c) => c.id != id);
-    setListOfCourses(newCourses);  
+    const newCourses = data.filter((c) => c.id != id);
+    setData(newCourses);
   }
 
-  if (!listOfCourses) {
+  if (!data) {
     return (
       <>
         <div className="text-center mt-15">
@@ -28,7 +32,7 @@ const CourseList = () => {
     );
   }
 
-  const ascendingOrder = [...listOfCourses]
+  const ascendingOrder = [...data]
     .filter((course) => course.price) // ignore empty objects
     .sort((a, b) => {
       const priceA = parseFloat(a.price.slice(1));
@@ -36,7 +40,7 @@ const CourseList = () => {
       return priceA - priceB;
     });
 
-  // const descendingOrder = [...listOfCourses]
+  // const descendingOrder = [...data]
   //   .filter((course) => course.price) // ignore empty objects
   //   .sort((a, b) => {
   //     const priceA = parseFloat(a.price.slice(1));

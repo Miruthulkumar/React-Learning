@@ -1,26 +1,26 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useFetch = () => {
-  const [listOfCourses, setListOfCourses] = useState(null);
+const useFetch = (url) => {
+  const [data, setData] = useState(null);
 
   const [error, setError] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
       axios
-        .get("http://localhost:5175/courses")
+        .get(url)
         .then((response) => {
-          setListOfCourses(response.data);
+          setData(response.data);
         })
         .catch((error) => {
           console.log(error.message);
           setError(error.message);
         });
     }, 1000);
-  }, []);
+  }, [url]);
 
-  return [listOfCourses, setListOfCourses, error];
+  return [data, setData, error];
 };
 
 export default useFetch;
