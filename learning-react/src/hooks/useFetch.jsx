@@ -20,7 +20,7 @@ const useFetch = () => {
     }, 1000);
   }, []);
 
-  return [listOfCourses, error];
+  return [listOfCourses, setListOfCourses, error];
 };
 
 export default useFetch;

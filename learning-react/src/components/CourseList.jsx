@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "../App.css";
 import Courses from "./Courses";
+import useFetch from "../hooks/useFetch";
 
 const CourseList = () => {
-  
+  const [listOfCourses,setListOfCourses, error] = useFetch();
 
   function handleDelete(id) {
     const newCourses = listOfCourses.filter((c) => c.id != id);
-    setListOfCourses(newCourses);
+    setListOfCourses(newCourses);  
   }
 
   if (!listOfCourses) {
     return (
       <>
         <div className="text-center mt-15">
-          {!error && <img className="mx-auto mt-100 w-20 h-20" src="src/assets/Loading.gif"></img>}
+          {!error && (
+            <img
+              className="mx-auto mt-100 w-20 h-20"
+              src="src/assets/Loading.gif"
+            ></img>
+          )}
           {error && <p>{error}</p>}
         </div>
       </>
