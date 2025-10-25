@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../App.css";
 import Courses from "./Courses";
 
 const CourseList = () => {
-  //dummy data
   const [listOfCourses, setListOfCourses] = useState(null);
 
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    fetch("http://localhost:5175/courses")
-      .then((Response) => {
-        // console.log(Response);
-        return Response.json();
-      })
-      .then((data) => {
-        setListOfCourses(data);
-      });
+    setTimeout(() => {
+      axios
+        .get("http://localhost:5175/courses")
+        .then((response) => {
+          setListOfCourses(response.data);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          setError(error.message);
+        });
+    }, 1000);
   }, []);
 
   function handleDelete(id) {
@@ -23,7 +28,11 @@ const CourseList = () => {
   }
 
   if (!listOfCourses) {
-    return <></>;
+    return (
+      <>
+        <div className="text-center mt-15">{error}</div>
+      </>
+    );
   }
 
   const ascendingOrder = [...listOfCourses]
