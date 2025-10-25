@@ -30,7 +30,10 @@ const CourseList = () => {
   if (!listOfCourses) {
     return (
       <>
-        <div className="text-center mt-15">{error}</div>
+        <div className="text-center mt-15">
+          {!error && <img className="mx-auto mt-100 w-20 h-20" src="src/assets/Loading.gif"></img>}
+          {error && <p>{error}</p>}
+        </div>
       </>
     );
   }
