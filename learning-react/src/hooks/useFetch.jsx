@@ -7,9 +7,12 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     setTimeout(() => {
       axios
-        .get(url)
+        .get(url, { signal })
         .then((response) => {
           setData(response.data);
         })
@@ -18,6 +21,10 @@ const useFetch = (url) => {
           setError(error.message);
         });
     }, 1000);
+
+    return () => {
+      controller.abort();
+    };
   }, [url]);
 
   return [data, setData, error];
