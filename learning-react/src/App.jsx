@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import CourseList from "./components/CourseList";
 import Login from "./components/Login";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -10,9 +10,16 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<CourseList/>}/>
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/CourseList" element={<CourseList/>}/>
+        <Route
+          path="/CourseList"
+          element={
+            <ProtectedRoute>
+              <CourseList />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
