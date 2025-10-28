@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import CourseList from "./components/CourseList";
 import Login from "./components/Login";
@@ -8,8 +9,11 @@ function App() {
   return (
     <>
       <Navbar />
-      <Login />
-      {/* <CourseList/> */}
+      <Routes>
+        <Route path="/" element={<CourseList/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/CourseList" element={<CourseList/>}/>
+      </Routes>
     </>
   );
 }
