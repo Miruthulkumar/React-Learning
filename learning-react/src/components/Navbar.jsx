@@ -1,21 +1,35 @@
-  import React from "react";
-  import PropTypes from "prop-types";
-  import "../App.css";
+import React from "react";
+import PropTypes from "prop-types";
+import "../App.css";
 
-  const Navbar = () => {
-    return (
-      <div className="w-full fixed left-0 top-0 h-auto py-4 bg-black text-white flex  gap-4 justify-between z-1">
-        <h1 className="ml-7">Miruthul's Study Center</h1>
-        <ul className="flex gap-3 mr-7">
-          <button onClick={()=>{console.log("sign up working")}} className="bg-blue-400 rounded-2xl px-2 ">Sign Up</button>
-          <button onClick={()=>{console.log("Login button working")}} className="bg-blue-400 rounded-2xl px-4 ">Login</button>
-        </ul>
-      </div>
-    );
-  };
+const Navbar = () => {
+  return (
+    <div className="fixed top-0 left-0 z-1 flex h-auto w-full justify-between gap-4 bg-black py-4 text-white">
+      <h1 className="ml-7">Miruthul's Study Center</h1>
+      <ul className="mr-7 flex gap-3">
+        <button
+          onClick={() => {
+            console.log("sign up working");
+          }}
+          className="rounded-2xl bg-blue-400 px-2"
+        >
+          Sign Up
+        </button>
+        <button
+          onClick={() => {
+            console.log("Login button working");
+          }}
+          className="rounded-2xl bg-blue-400 px-4"
+        >
+          Login
+        </button>
+      </ul>
+    </div>
+  );
+};
 
-  Navbar.propTypes = {
-    name: PropTypes.string, // ensures 'name' is a string and required
-  };  
+Navbar.propTypes = {
+  name: PropTypes.string, // ensures 'name' is a string and required
+};
 
 export default Navbar;

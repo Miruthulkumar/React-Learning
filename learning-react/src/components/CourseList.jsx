@@ -5,10 +5,9 @@ import Courses from "./Courses";
 import useFetch from "../hooks/useFetch";
 
 const CourseList = () => {
-
   //custom hook
   const [listOfCourses, setListOfCourses, error] = useFetch(
-    "http://localhost:5175/courses"
+    "http://localhost:5175/courses",
   );
 
   function handleDelete(id) {
@@ -19,10 +18,10 @@ const CourseList = () => {
   if (!listOfCourses) {
     return (
       <>
-        <div className="text-center mt-15">
+        <div className="mt-15 text-center">
           {!error && (
             <img
-              className="mx-auto mt-100 w-20 h-20"
+              className="mx-auto mt-100 h-20 w-20"
               src="src/assets/Loading.gif"
             ></img>
           )}
@@ -64,7 +63,7 @@ const CourseList = () => {
   });
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 mt-15">
+    <div className="mt-15 grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3">
       {mappedCourses}
     </div>
   );
