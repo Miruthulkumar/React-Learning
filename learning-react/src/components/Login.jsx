@@ -1,15 +1,34 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
-export default function Login() {
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+function Login() {
+  const navigate = useNavigate(); // 👈 add this line
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
     // Add your login logic here (API call, validation, etc.)
+    try {
+      // Send login request to backend
+      const response = await axios.post("http://localhost:6050/login", {
+        email,
+        password,
+      });
+
+      // If login success
+      console.log("Login success:", response.data);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
+      // Navigate to next page
+      navigate("/courselist");
+    } catch (error) {
+      console.error("Login failed:", error.response?.data?.message);
+    }
   };
 
   return (
@@ -22,7 +41,7 @@ export default function Login() {
         backgroundPosition: "center",
       }}
     >
-      <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
+      <div className="mt-13 w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
         <h2 className="mb-6 text-center text-2xl font-semibold text-gray-800">
           Miruthul's Study Center
         </h2>
@@ -56,12 +75,12 @@ export default function Login() {
             />
           </div>
 
-          <Link
-            to="/courselist"
+          <button
+            type="submit"
             className="block w-full rounded-xl bg-blue-600 py-2 text-center font-medium text-white transition duration-200 hover:bg-blue-700"
           >
             Login
-          </Link>
+          </button>
         </form>
 
         <p className="mt-4 text-center text-sm text-gray-600">
@@ -74,3 +93,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;
