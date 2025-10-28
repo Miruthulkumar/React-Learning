@@ -6,7 +6,11 @@ app.use(
     origin: "http://localhost:5173",
   })
 );
-const PORT = 6050;
+
+import dotenv from "dotenv";
+dotenv.config();
+
+const PORT = process.env.PORT;
 import connectDB from "./db.js";
 
 import StudyCenterUserInfo from "./studyCenterUserInfoSchema.js";
