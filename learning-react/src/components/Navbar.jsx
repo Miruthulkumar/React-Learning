@@ -4,7 +4,7 @@ import "../App.css";
 
 const Navbar = () => {
   return (
-    <div className="fixed top-0 left-0 z-1 flex h-auto w-full justify-between gap-4 bg-black py-4 text-white">
+    <div className="fixed top-0 left-0 z-1 flex h-auto w-full justify-between gap-4 bg-black py-4 text-white" >
       <h1 className="ml-7">Miruthul's Study Center</h1>
       <ul className="mr-7 flex gap-3">
         <button

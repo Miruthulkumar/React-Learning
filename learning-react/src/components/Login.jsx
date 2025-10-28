@@ -15,7 +15,8 @@ export default function Login() {
     <div
       className="flex min-h-screen items-center justify-center bg-gray-100"
       style={{
-        backgroundImage: "url('')",
+        backgroundImage:
+          "url('https://images.pexels.com/photos/34422044/pexels-photo-34422044.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
