@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
-    // Add your login logic here (API call, validation, etc.)
+
     try {
       // Send login request to backend
       const response = await axios.post("http://localhost:6050/login", {
