@@ -3,6 +3,7 @@
 import "../App.css";
 import Courses from "./Courses";
 import useFetch from "../hooks/useFetch";
+import PropTypes from "prop-types";
 
 const CourseList = () => {
   //custom hook
@@ -38,7 +39,14 @@ const CourseList = () => {
       const priceB = parseFloat(b.price.slice(1));
       return priceA - priceB;
     });
-
+  Courses.propTypes = {
+    name: PropTypes.string.isRequired,
+    price: PropTypes.string,
+    rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    duration: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    delete: PropTypes.func.isRequired,
+  };
   // const descendingOrder = [...listOfCourses]
   //   .filter((course) => course.price) // ignore empty objects
   //   .sort((a, b) => {
