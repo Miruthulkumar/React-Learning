@@ -101,3 +101,7 @@ Login.propTypes = {
   redirectPath: PropTypes.string,
 };
 
+Login.defaultProps = {
+  onLoginSuccess: undefined,
+  redirectPath: "/courselist",
+};
