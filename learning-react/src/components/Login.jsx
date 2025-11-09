@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 function Login() {
   const navigate = useNavigate(); 
@@ -95,3 +96,8 @@ function Login() {
 }
 
 export default Login;
+Login.propTypes = {
+  onLoginSuccess: PropTypes.func,
+  redirectPath: PropTypes.string,
+};
+
