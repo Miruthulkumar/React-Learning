@@ -14,10 +14,11 @@ const PORT = process.env.PORT;
 import connectDB from "./db.js";
 
 import StudyCenterUserInfo from "./studyCenterUserInfoSchema.js";
+import helmet from "helmet";
 
 connectDB();
 app.use(express.json());
-
+app.use(helmet());
 app.get("/", (req, res) => {
   res.status(200).send("BackEnd seems to work");
 });
